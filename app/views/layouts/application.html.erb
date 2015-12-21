@@ -19,10 +19,10 @@
 		<ul>
 			<li class="category">Website</li>
 			<li><%= link_to "Blog", root_path %></li>
-			<li>About</li>
+			<li><%= link_to "About", about_path %></li>
 		</ul>
 		<ul>
-			<li>Social</li>
+			<li class="category">Social</li>
 			<li>Twitter</li>
 			<li>Instagram</li>
 			<li>Github</li>
@@ -37,7 +37,13 @@
 	<div id="main_content">
 		<div id="header">
 			<p>
-				<%= link_to "All Posts", root_path %>
+				<% if current_page?(root_path) %>
+					<%= link_to "All Posts", root_path %>
+				<% elsif current_page?(about_path) %>
+					About
+				<% else %>
+					<%= link_to "Ver todos los posts", root_path %>
+				<% end %>
 			</p>
 			<div class="buttons">
 				<button class="button">
