@@ -13,9 +13,10 @@
 		</p>
 
 	</div>
-
+	<% if user_signed_in? %>
 	<p>
 		<%= link_to 'Borrar comentario', [comment.post, comment], method: :delete, class: 'button', data: {confirm: "De acuerdo en borrar comentario?"} %>
 		
 	</p>
+	<% end %>
 </div>
